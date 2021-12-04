@@ -4,7 +4,14 @@ get_header();
 
 
 
-
+<div class="menu-cont">
+    <!-- <i class="fas fa-bars"></i> -->
+    <div id="nav-icon1">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+</div>
 <section class="home row" id="home">
     <div class="author-img-cont width-50">
       <img src="http://localhost:3000/minte-temple-portfolio/wp-content/uploads/2021/11/IMG_6754-1.png" />
@@ -13,8 +20,8 @@ get_header();
       <div class="greeting-message">
           <h1>Hello Guys !</h1>
           <h1 class="intro">I am <span class="emphasy">Minte Temple,</span> I enjoy turning complex problems into simple, beautiful and intuitive interface designs.</h1>
-          <div>
-            <button class="hirebtn">Hire Me</button>
+          <div class="btn-social">
+            <button  class="hirebtn">Hire Me</button>
             <ul class="socials">
                 <li class="icon-cont">
                     <a href=""><i class="fab fa-github"></i></a>
@@ -103,18 +110,22 @@ get_header();
         <div class="section-grid">
             <form>
                 <div class="row">
-                  <input id="" name="name" placeholder="Your Name*" required/>
-                  <input id="" name="email" placeholder="Your Email*" required/>
+                    <input id="name" name="name" placeholder="Your Name*" required/>
+                    <p class="error"></p>
+                    <input id="email" type="email" name="email" placeholder="Your Email*" required/>
+                    <p class="error"></p>
                 </div>
                 <div class="row">
-                  <input id="" name="" placeholder="Subject*" required/>
+                    <input id="subject" name=subject"" placeholder="Subject*" required/>
+                    <p class="error"></p>
                 </div>
                 <div class="row">
-                  <textarea  rows="4"   placeholder="Message*" required>
-                  </textarea>
+                    <textarea  rows="4" id="message" name="message" placeholder="Message*" required>
+                    </textarea>
+                    <p class="error"></p>
                 </div>
                 <div class="row right">
-                  <input value="Submit" id="" name="" placeholder="Subject*" required/>
+                    <input value="Submit" id="" name="" type="submit" required/>
                 </div>
             </form>
         </div>
@@ -124,15 +135,15 @@ get_header();
             </div>
             <div class="contact-option">
               <i class="fas fa-calendar-week"></i>
-              <span>Schedule a meeting</span>
+              <a href="#">Schedule a meeting</a>
             </div>
             <div class="contact-option">
               <i class="fas fa-envelope-open-text"></i>
-              <span>Email me</span>
+              <a href="#">Email me</a>
             </div>
             <div class="contact-option">
               <i class="fas fa-phone"></i>
-              <span>Call me</span>
+              <a  href="#">Call me</a>
             </div class="contact-option">
             <div class="contact-option">
               <ul class="socials">

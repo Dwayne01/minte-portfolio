@@ -9,12 +9,18 @@ Text Domain: portfolio
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+.home > .container > .row {
+  position: relative;
+}
+
 .sidebar {
-  width: 13%;
+  width: 220px;
   height: 100vh;
   background-color: #794b39;
   text-align: left;
   display: none;
+  position: absolute;
+  z-index: 100;
 }
 
 .sidebar .logo {
@@ -23,6 +29,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
   font-family: Montserrat, 'Times New Roman', Times, serif;
   background: #351e18;
   padding: 20px;
+  padding: 25px 72px;
+  line-height: 2;
   color: #fff;
 }
 
@@ -31,6 +39,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
   padding: 0;
   margin: 0;
   margin-top: 50px;
+  font-family: Montserrat, 'Times New Roman', Times, serif;
 }
 
 .sidebar .nav ul li {
@@ -46,6 +55,36 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .sidebar .nav ul li:hover {
   background-color: #351e18;
   cursor: pointer;
+}
+
+@-webkit-keyframes slideout {
+  from {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+  }
+}
+
+@keyframes slideout {
+  from {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+  }
 }
 
 @-webkit-keyframes slideRight {
@@ -79,20 +118,40 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 @-webkit-keyframes bounce {
-  50% {
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
-    -webkit-transition-timing-function: ease-in;
-            transition-timing-function: ease-in;
+  0% {
+    -webkit-transform: scale(1, 1) translate(0px, 0px);
+            transform: scale(1, 1) translate(0px, 0px);
+  }
+  30% {
+    -webkit-transform: scale(1, 0.8) translate(0px, 10px);
+            transform: scale(1, 0.8) translate(0px, 10px);
+  }
+  75% {
+    -webkit-transform: scale(1, 1.1) translate(0px, -25px);
+            transform: scale(1, 1.1) translate(0px, -25px);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translate(0px, 0px);
+            transform: scale(1, 1) translate(0px, 0px);
   }
 }
 
 @keyframes bounce {
-  50% {
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
-    -webkit-transition-timing-function: ease-in;
-            transition-timing-function: ease-in;
+  0% {
+    -webkit-transform: scale(1, 1) translate(0px, 0px);
+            transform: scale(1, 1) translate(0px, 0px);
+  }
+  30% {
+    -webkit-transform: scale(1, 0.8) translate(0px, 10px);
+            transform: scale(1, 0.8) translate(0px, 10px);
+  }
+  75% {
+    -webkit-transform: scale(1, 1.1) translate(0px, -25px);
+            transform: scale(1, 1.1) translate(0px, -25px);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translate(0px, 0px);
+            transform: scale(1, 1) translate(0px, 0px);
   }
 }
 
@@ -110,6 +169,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
             justify-content: space-between;
     -webkit-animation: slideRight 1s;
             animation: slideRight 1s;
+  }
+  .menu-cont {
+    display: none;
   }
 }
 
@@ -133,27 +195,85 @@ body {
   background-color: #fdefe2;
 }
 
+.menu-cont {
+  padding: 10px 30px;
+}
+
+.menu-cont #nav-icon1 {
+  width: 28px;
+  height: 41px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: right;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+.menu-cont #nav-icon1 span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #794b39;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+.menu-cont #nav-icon1 span:nth-child(1) {
+  top: 10px;
+}
+
+.menu-cont #nav-icon1 span:nth-child(2) {
+  top: 20px;
+}
+
+.menu-cont #nav-icon1 span:nth-child(3) {
+  top: 30px;
+}
+
+.menu-cont #nav-icon1.open span:nth-child(1) {
+  top: 18px;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.menu-cont #nav-icon1.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.menu-cont #nav-icon1.open span:nth-child(3) {
+  top: 18px;
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
 .container-box .home {
-  height: 100vh;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 70px;
 }
 
 .row {
   display: block;
 }
 
-.width-50 {
-  width: 50%;
-}
-
 .greeting-message {
   font-size: 24px;
-  -webkit-transform: translate(70px, 250px);
-          transform: translate(70px, 250px);
   color: #794b39;
-  -webkit-animation: slideLeft 1s;
-          animation: slideLeft 1s;
+  letter-spacing: .10em;
+  /* Adjust as needed */
+  margin-top: 50px;
 }
 
 .greeting-message .hirebtn {
@@ -161,9 +281,15 @@ body {
   color: #fff;
   border: none;
   cursor: pointer;
-  margin-right: 30px;
+  margin-right: 2px;
   border-radius: 30px;
-  padding: 20px 30px;
+  padding: 15px 20px;
+  -webkit-animation: bounce 1s infinite;
+          animation: bounce 1s infinite;
+}
+
+.greeting-message .btn-social {
+  margin-top: 50px;
 }
 
 .greeting-message .hirebtn:hover {
@@ -171,7 +297,12 @@ body {
           transform: scale(1.2);
 }
 
+.greeting-message .intro {
+  font-size: 24px;
+}
+
 .greeting-message h1 {
+  font-size: 34px;
   margin-bottom: 20px;
   font-family: Montserrat, 'Times New Roman', Times, serif;
 }
@@ -180,16 +311,9 @@ body {
   font-family: Rubik, 'Times New Roman', Times, serif;
 }
 
-.author-img-cont {
-  position: relative;
-}
-
 .author-img-cont img {
-  height: 100%;
-  position: absolute;
-  -webkit-transform: translateX(-13.5%);
-          transform: translateX(-13.5%);
-  bottom: 0;
+  width: 100%;
+  border-radius: 300px;
 }
 
 .empahasy {
@@ -208,7 +332,7 @@ body {
   -webkit-transition: all 0.3s ease-inc;
   transition: all 0.3s ease-inc;
   display: inline-block;
-  margin-right: 15px;
+  margin-right: 0px;
 }
 
 .icon-cont:hover {
@@ -277,15 +401,14 @@ body {
 
 .skills-section {
   background-color: #f7f7f7;
-  padding: 25px 50px;
-  height: 100vh;
+  padding: 25px 50px 100px 50px;
 }
 
 .skills-section .section-grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (18.3%)[5];
-      grid-template-columns: repeat(5, 18.3%);
+  -ms-grid-columns: (47.3%)[2];
+      grid-template-columns: repeat(2, 47.3%);
   text-align: center;
   background-color: #fdefe2;
   border-radius: 20px;
@@ -322,14 +445,13 @@ body {
 .project-section {
   background-color: #fdefe2;
   padding: 25px 50px;
-  height: 100vh;
 }
 
 .project-section .section-grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
   border-radius: 20px;
   gap: 20px;
 }
@@ -393,6 +515,10 @@ body {
   color: black;
 }
 
+.cards-side1 .card-title {
+  line-height: 2.5;
+}
+
 .cards-side2 {
   background-color: #fff;
   -webkit-transform: rotateY(180deg);
@@ -413,16 +539,16 @@ body {
 .contact-section {
   background-color: #fff;
   padding: 25px 50px;
-  height: 100vh;
 }
 
 .contact-section .section-grid {
   background-color: #f7f7f7;
-  padding: 50px;
+  padding: 20px;
   border-radius: 20px;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+  margin-top: 20px;
 }
 
 .contact-section .section-content {
@@ -437,7 +563,7 @@ body {
 
 .contact-section .socials-cont {
   background-color: #351e18;
-  padding: 50px 80px;
+  padding: 38px;
   border-radius: 10px;
   color: #fff;
   border-radius: 10px;
@@ -446,8 +572,14 @@ body {
           order: 1;
 }
 
+.contact-section .socials-cont h2 {
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+}
+
 .contact-section .socials-cont .contact-option {
   margin-top: 20px;
+  color: #fff;
 }
 
 .contact-section .socials-cont .contact-option .icon-cont {
@@ -462,6 +594,8 @@ body {
   background-color: #fff;
   margin-bottom: 10px;
   border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .contact-section .row {
@@ -487,7 +621,7 @@ body {
   padding: 30px;
   background: #fff;
   z-index: 1000;
-  /* display: none; */
+  display: none;
   position: fixed;
   bottom: 90px;
   right: 30px;
@@ -542,14 +676,90 @@ body {
   }
 }
 
+@media screen and (min-width: 400px) {
+  .skills-section .section-grid {
+    -ms-grid-columns: (31.3%)[3];
+        grid-template-columns: repeat(3, 31.3%);
+  }
+}
+
 @media screen and (min-width: 800px) {
   .container-box {
     width: 90%;
+  }
+  .menu-cont .nav-icon1 {
+    display: hidden;
+  }
+  .project-section .section-grid {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+  .row {
+    position: unset;
+  }
+  .sidebar {
+    position: unset;
+    width: 150px;
+  }
+  .sidebar .logo {
+    padding: 0px 40px;
+  }
+  .skills-section {
+    padding: 50px 300px;
+    height: 100vh;
   }
   .row {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  .author-img-cont img {
+    width: auto;
+    border-radius: 0;
+  }
+  .author-img-cont {
+    height: 100%;
+  }
+  .skills-section .section-grid {
+    -ms-grid-columns: (18.3%)[5];
+        grid-template-columns: repeat(5, 18.3%);
+  }
+  .container-box .home {
+    padding-left: 100px;
+    padding-right: 100px;
+    height: 100vh;
+    padding-bottom: 0px;
+  }
+  .author-img-cont {
+    position: relative;
+  }
+  .author-img-cont img {
+    height: 100%;
+    position: absolute;
+    -webkit-transform: translateX(-13.5%);
+            transform: translateX(-13.5%);
+    bottom: 0;
+  }
+  .width-50 {
+    width: 50%;
+  }
+  .greeting-message {
+    -webkit-transform: translate(70px, 250px);
+            transform: translate(70px, 250px);
+    -webkit-animation: slideLeft 1s;
+            animation: slideLeft 1s;
+  }
+  .greeting-message .intro {
+    font-size: 30px;
+  }
+  .greeting-message .hirebtn {
+    margin-right: 30px;
+  }
+  .greeting-message h1 {
+    font-size: 36px;
+  }
+  .greeting-message .icon-cont {
+    margin-right: 15px;
   }
   .contact-section .section-content {
     position: relative;
@@ -560,6 +770,7 @@ body {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+    margin-top: 20px;
   }
   .contact-section .socials-cont {
     position: absolute;

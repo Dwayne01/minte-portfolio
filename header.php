@@ -9,8 +9,8 @@
 <body <?php body_class(); ?>>
 
   <div class="container">
-    <div class="row">
-        <div class="sidebar">
+    <div class="row ">
+        <div class="sidebar" id="sidebar">
             <a href="<?php  echo home_url(); ?>" class="logo">
               Mt
             </a>

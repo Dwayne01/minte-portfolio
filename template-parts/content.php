@@ -1,15 +1,8 @@
 <div class="project-card">
         <div class="cards-side cards-side1">
-        <?php
-            if( is_single() ) :
-                the_post_thumbnail();
-            else : ?>
-                <a href="<?php the_permalink( ) ?>"><?php the_post_thumbnail(); ?></a>
-            <?php 
-                 endif
-            ?> 
-
-            <div>
+            <?php the_post_thumbnail(); ?>
+          
+            <div class="card-title">
                 <?php the_title( ) ?>
             </div>
         </div>
