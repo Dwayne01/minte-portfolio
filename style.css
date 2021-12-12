@@ -119,39 +119,51 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 @-webkit-keyframes bounce {
   0% {
-    -webkit-transform: scale(1, 1) translate(0px, 0px);
-            transform: scale(1, 1) translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
   }
   30% {
-    -webkit-transform: scale(1, 0.8) translate(0px, 10px);
-            transform: scale(1, 0.8) translate(0px, 10px);
+    -webkit-transform: translate(0px, 10px);
+            transform: translate(0px, 10px);
   }
   75% {
-    -webkit-transform: scale(1, 1.1) translate(0px, -25px);
-            transform: scale(1, 1.1) translate(0px, -25px);
+    -webkit-transform: translate(0px, -25px);
+            transform: translate(0px, -25px);
   }
   100% {
-    -webkit-transform: scale(1, 1) translate(0px, 0px);
-            transform: scale(1, 1) translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
   }
 }
 
 @keyframes bounce {
   0% {
-    -webkit-transform: scale(1, 1) translate(0px, 0px);
-            transform: scale(1, 1) translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
   }
   30% {
-    -webkit-transform: scale(1, 0.8) translate(0px, 10px);
-            transform: scale(1, 0.8) translate(0px, 10px);
+    -webkit-transform: translate(0px, 10px);
+            transform: translate(0px, 10px);
   }
   75% {
-    -webkit-transform: scale(1, 1.1) translate(0px, -25px);
-            transform: scale(1, 1.1) translate(0px, -25px);
+    -webkit-transform: translate(0px, -25px);
+            transform: translate(0px, -25px);
   }
   100% {
-    -webkit-transform: scale(1, 1) translate(0px, 0px);
-            transform: scale(1, 1) translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .home .row .sidebar {
+    width: 165px;
+  }
+  .home .row .sidebar .logo {
+    padding: 0px 25px;
+  }
+  .home .row .sidebar .nav ul li a {
+    font-size: 18px;
   }
 }
 
@@ -169,6 +181,14 @@ Use it to make something cool, have fun, and share what you've learned with othe
             justify-content: space-between;
     -webkit-animation: slideRight 1s;
             animation: slideRight 1s;
+    position: unset;
+    width: 145px;
+  }
+  .sidebar .logo {
+    padding: 0px 20px;
+  }
+  .sidebar .nav ul li a {
+    font-size: 14px;
   }
   .menu-cont {
     display: none;
@@ -284,8 +304,10 @@ body {
   margin-right: 2px;
   border-radius: 30px;
   padding: 15px 20px;
-  -webkit-animation: bounce 1s infinite;
-          animation: bounce 1s infinite;
+  font-size: 18px;
+  -webkit-animation: bounce 2s infinite;
+          animation: bounce 2s infinite;
+  text-decoration: none;
 }
 
 .greeting-message .btn-social {
@@ -342,7 +364,7 @@ body {
 }
 
 .socials a {
-  color: #794b39;
+  color: #794b39 !important;
 }
 
 .socials {
@@ -395,8 +417,10 @@ body {
 }
 
 .section-content p {
-  font-size: 18px;
-  line-height: 2;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: justify;
+  margin: 20px;
 }
 
 .skills-section {
@@ -488,6 +512,8 @@ body {
   font-size: 14px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-transform: translateY(70px);
+          transform: translateY(70px);
   width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -577,8 +603,20 @@ body {
           margin-block-start: 0;
 }
 
+.contact-section .socials-cont .contact-option > i {
+  margin-right: 10px;
+}
+
 .contact-section .socials-cont .contact-option {
   margin-top: 20px;
+  color: #fff !important;
+}
+
+.contact-section .socials-cont .contact-option li {
+  margin-right: 10px;
+}
+
+.contact-section .socials-cont .contact-option a {
   color: #fff;
 }
 
@@ -608,13 +646,48 @@ body {
           justify-content: center;
 }
 
-.contact-section .right input {
-  width: 100px;
+.contact-section .right button {
+  width: 130px;
   border-radius: 50px;
+  padding: 10px 20px;
   background-color: #351e18;
-  margin-top: 20px;
   color: #fff;
   text-align: center;
+  border: none;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.contact-section .right .typewriter {
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em;
+  /* Adjust as needed */
+  font-size: 14px;
+  -webkit-animation: typing 2s steps(40, end) infinite;
+          animation: typing 2s steps(40, end) infinite;
+}
+
+/* The typing effect */
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .scrollcont {
@@ -637,17 +710,29 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
+  .home .width-50 .greeting-message .intro {
+    font-size: 28px;
+  }
+  .home #home .author-img-cont img {
+    height: 85%;
+  }
   .aboutme {
     padding: 50px 160px;
-    height: 100vh;
+  }
+  .aboutme .section-content {
+    font-size: 24px;
   }
   .project-section {
     padding: 50px 160px;
-    height: 100vh;
+    height: 70vh;
   }
   .skills-section {
     padding: 50px 160px;
-    height: 100vh;
+    height: 90vh;
+  }
+  .skills-section .section-content .section-grid {
+    -ms-grid-columns: (18.3%)[5];
+        grid-template-columns: repeat(5, 18.3%);
   }
   .contact-section {
     padding: 50px 160px;
@@ -656,12 +741,16 @@ body {
   .contact-section .section-grid {
     padding: 50px 200px 50px 50px;
   }
-  .contact-section .socials-cont {
-    width: 35%;
-  }
 }
 
 @media screen and (min-width: 1200px) {
+  .home #home .author-img-cont img {
+    height: 95% !important;
+  }
+  .greeting-message {
+    -webkit-transform: translate(50px, 250px) !important;
+            transform: translate(50px, 250px) !important;
+  }
   .aboutme {
     padding: 50px 300px;
   }
@@ -685,7 +774,7 @@ body {
 
 @media screen and (min-width: 800px) {
   .container-box {
-    width: 90%;
+    width: 100%;
   }
   .menu-cont .nav-icon1 {
     display: hidden;
@@ -694,39 +783,22 @@ body {
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
   }
-  .row {
+  .home .row {
     position: unset;
-  }
-  .sidebar {
-    position: unset;
-    width: 150px;
-  }
-  .sidebar .logo {
-    padding: 0px 40px;
-  }
-  .skills-section {
-    padding: 50px 300px;
-    height: 100vh;
   }
   .row {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  .author-img-cont img {
-    width: auto;
-    border-radius: 0;
-  }
   .author-img-cont {
     height: 100%;
   }
   .skills-section .section-grid {
-    -ms-grid-columns: (18.3%)[5];
-        grid-template-columns: repeat(5, 18.3%);
+    -ms-grid-columns: (23.3%)[4];
+        grid-template-columns: repeat(4, 23.3%);
   }
   .container-box .home {
-    padding-left: 100px;
-    padding-right: 100px;
     height: 100vh;
     padding-bottom: 0px;
   }
@@ -734,39 +806,42 @@ body {
     position: relative;
   }
   .author-img-cont img {
-    height: 100%;
+    height: 85%;
     position: absolute;
     -webkit-transform: translateX(-13.5%);
             transform: translateX(-13.5%);
     bottom: 0;
+    border-radius: 0;
+    width: auto;
   }
   .width-50 {
     width: 50%;
   }
   .greeting-message {
-    -webkit-transform: translate(70px, 250px);
-            transform: translate(70px, 250px);
-    -webkit-animation: slideLeft 1s;
-            animation: slideLeft 1s;
+    -webkit-transform: translate(33px, 100px);
+            transform: translate(33px, 100px);
   }
   .greeting-message .intro {
-    font-size: 30px;
+    font-size: 22px;
   }
   .greeting-message .hirebtn {
-    margin-right: 30px;
+    margin-right: 10px;
   }
   .greeting-message h1 {
     font-size: 36px;
   }
   .greeting-message .icon-cont {
-    margin-right: 15px;
+    margin-right: 0px;
+  }
+  .contact-section {
+    height: 80vh;
   }
   .contact-section .section-content {
     position: relative;
     display: block;
   }
   .contact-section .section-content .section-grid {
-    padding: 50px 270px 50px 50px;
+    padding: 25px 250px 20px 35px;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -774,10 +849,11 @@ body {
   }
   .contact-section .socials-cont {
     position: absolute;
-    -webkit-transform: translate(500px, -200px);
-            transform: translate(500px, -200px);
-    width: 30%;
+    -webkit-transform: translate(30px, -380px);
+            transform: translate(30px, -380px);
+    width: 200px;
     padding: 70px 30px;
+    right: 0;
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;

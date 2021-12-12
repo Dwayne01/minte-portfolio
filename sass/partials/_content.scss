@@ -113,8 +113,11 @@ body {
         margin-right: 2px;
         border-radius: 30px;
         padding: 15px 20px;
-        animation: bounce 1s infinite;
+        font-size: 18px;
+        animation: bounce 2s infinite;
+        text-decoration: none;
     }
+
     .btn-social {
         margin-top: 50px;
     }
@@ -170,7 +173,7 @@ body {
   }
 
   .socials a {
-    color: $primary;
+    color: $primary !important;
   }
   
 
@@ -209,8 +212,10 @@ body {
 }
 
 .section-content p {
-    font-size: 18px;
-    line-height: 2;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify;
+    margin: 20px;
 }
 
 
@@ -299,6 +304,7 @@ body {
     display: flex;
     font-size: 14px;
     flex-wrap: wrap;
+    transform: translateY(70px);
     width: 100%;
     justify-content: center;
     gap: 5px;
@@ -328,6 +334,8 @@ body {
 .cards-side2 {
     background-color: $white;
     transform: rotateY(180deg);
+
+
 }
 
 
@@ -371,10 +379,24 @@ body {
         h2{
             margin-block-start: 0;
         }
+
+        .contact-option >  i {
+            margin-right: 10px;
+        }
         
         .contact-option {
             margin-top: 20px;
-            color: $white;
+            color: $white!important;
+
+            li {
+                margin-right: 10px;
+            }
+
+            a {
+                color: $white;
+            }
+
+           
 
             .icon-cont {
                 box-shadow: none;
@@ -400,18 +422,34 @@ body {
     .right {
         justify-content: center;
 
-        input {
-            width: 100px;
+        button {
+            width: 130px;
             border-radius: 50px;
+            padding: 10px 20px;
             background-color: $secondary;
-            margin-top: 20px;
             color: $white;
             text-align: center;
+            border: none;   
+            margin-top: 10px;    
+            font-size: 14px;
         }
-    }
+
+        .typewriter {
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .15em; /* Adjust as needed */
+            font-size: 14px;
+            animation: typing 2s steps(40, end) infinite;
+        }
+    }   
 }
-
-
+    
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
 
 
 //Scrool to top
@@ -436,20 +474,35 @@ body {
 
 @media  screen and (min-width: 1024px) {
 
-  
+    .home .width-50 .greeting-message .intro {
+        font-size: 28px;
+    }
+
+    .home #home .author-img-cont img {
+        height: 85%;
+        
+    }
+
     .aboutme {
         padding: 50px 160px;
-        height: 100vh;
+
+        .section-content {
+            font-size: 24px;
+        }
     }
 
     .project-section {
         padding: 50px 160px;
-        height: 100vh;        
+        height: 70vh;        
     }
 
     .skills-section {
         padding: 50px 160px;
-        height: 100vh;
+        height: 90vh;
+        
+        .section-content .section-grid {
+            grid-template-columns: repeat(5, 18.3%);
+        }
     }
 
     .contact-section {
@@ -459,15 +512,20 @@ body {
         .section-grid {
             padding: 50px 200px 50px 50px;
         }
-        
-            .socials-cont {
-                width: 35%;
-            }
+    
     }
 }
 
 
 @media  screen and (min-width: 1200px) {
+
+    .home #home .author-img-cont img {
+        height: 95% !important;
+    }
+
+    .greeting-message {
+        transform: translate(50px, 250px) !important;
+    }
 
     .aboutme {
         padding: 50px 300px;
@@ -493,10 +551,14 @@ body {
     }
 }
 
+@media screen and (min-width: 950px){
+   
+}
+
 
 @media screen and (min-width: 800px) {
     .container-box {
-        width: 90%;
+        width: 100%;
      
     } 
     
@@ -511,46 +573,27 @@ body {
     }
 
 
-    .row {
+    .home .row {
         position: unset;
     }
 
-    .sidebar {
-        position: unset;
-        width: 150px;
-
-        .logo {
-            padding: 0px 40px;
-        }
-    }
-
-    .skills-section {
-        padding: 50px 300px;
-        height: 100vh;
-    }    
 
     .row {
         display: flex;
     }
 
-    .author-img-cont img {
-        width: auto;
-        border-radius: 0;
-    }
-     
+
     .author-img-cont {
         height: 100%;
     }
 
     .skills-section .section-grid {
-        grid-template-columns: repeat(5, 18.3%);
+        grid-template-columns: repeat(4, 23.3%);
     }
 
 
 
     .container-box .home{
-        padding-left: 100px;
-        padding-right: 100px;
         height: 100vh;
         padding-bottom: 0px
     }
@@ -560,11 +603,12 @@ body {
     }
     
     .author-img-cont img {
-        height: 100%;
-        // animation: slideLeft 1s;
+        height: 85%;
         position: absolute;
         transform: translateX(-13.5%);
         bottom: 0;
+        border-radius: 0;
+        width: auto;
     }
     
     
@@ -573,16 +617,15 @@ body {
     }
 
     .greeting-message {
-        transform: translate(70px, 250px);
-        animation: slideLeft 1s;
+        transform: translate(33px, 100px);
 
         .intro {
-            font-size: 30px;
+            font-size: 22px;
         }
 
 
         .hirebtn {
-            margin-right: 30px;
+            margin-right: 10px;
         }
 
         h1 {
@@ -590,17 +633,19 @@ body {
         }
 
         .icon-cont {
-            margin-right: 15px;
+            margin-right: 0px;
           }
     }
 
     .contact-section {
+        height: 80vh;
+
         .section-content {
             position: relative;
             display: block;
 
             .section-grid {
-                padding: 50px 270px 50px 50px;
+                padding: 25px 250px 20px 35px;
                 order: 1;
                 margin-top: 20px;
             }
@@ -608,11 +653,11 @@ body {
         
         .socials-cont {
             position: absolute;
-            transform: translate(500px, -200px);
-            width: 30%;
+            transform: translate(30px, -380px);
+            width: 200px;
             padding: 70px 30px;
+            right: 0;
             order: 2;
         }
     }
 }
-

@@ -74,29 +74,50 @@
 
 @keyframes bounce {
     0% {
-transform: scale(1,1) translate(0px, 0px);
+transform:  translate(0px, 0px);
 }
 
 30%{
-transform: scale(1,0.8) translate(0px, 10px); 
+transform: translate(0px, 10px); 
 }
 
 75%{
-transform: scale(1,1.1) translate(0px, -25px); 
+transform: translate(0px, -25px); 
 }
 
 100% {
-transform: scale(1,1) translate(0px, 0px);
+transform: translate(0px, 0px);
 }
 }
 
+@media screen and (min-width: 950px) {
+    .home .row .sidebar {
+        width: 165px;
+        .logo {
+            padding: 0px 25px;
+        }
+        .nav ul li a {
+            font-size: 18px
+        }
+    }
+}
 
 @media screen and (min-width: 800px) {
     .sidebar{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        animation: slideRight 1s;      
+        animation: slideRight 1s;    
+        position: unset;
+        width: 145px;
+
+        .logo {
+            padding: 0px 20px;
+        }
+
+        .nav ul li a {
+            font-size: 14px
+        }
     }
 
     .menu-cont  {

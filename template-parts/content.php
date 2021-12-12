@@ -10,9 +10,8 @@
             <a>Live</a>
             <?php 
                 if(!is_single()) :    ?>
-                <div class="category-wrapper">
-                    <i class="fas fa-folder"></i>         
-                    <?php the_category(' &#183; '); ?>
+                <div class="category-wrapper">       
+                    <?php the_content(); ?>
                 </div>
             <?php
               endif

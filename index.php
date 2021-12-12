@@ -14,7 +14,7 @@ get_header();
 </div>
 <section class="home row" id="home">
     <div class="author-img-cont width-50">
-      <img src="http://localhost:3000/minte-temple-portfolio/wp-content/uploads/2021/11/IMG_6754-1.png" />
+      <img src="https://mintetemple.name.ng/wp-content/uploads/2021/11/IMG_6754-1.png" />
     </div>
     <div class="width-50">
       <div class="greeting-message">
@@ -24,13 +24,13 @@ get_header();
             <button  class="hirebtn">Hire Me</button>
             <ul class="socials">
                 <li class="icon-cont">
-                    <a href=""><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/Dwayne01"><i class="fab fa-github"></i></a>
                 </li>
                 <li class="icon-cont">
-                    <a href="" ><i class="fab fa-linkedin"></i></a>
+                    <a href="http://www.linkedin.com/in/mintetemple" ><i class="fab fa-linkedin"></i></a>
                 </li>
                 <li class="icon-cont">
-                    <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/iamkingminte_ani"><i class="fab fa-instagram"></i></a>
                 </li>
             </ul>
           </div>
@@ -111,21 +111,18 @@ get_header();
             <form>
                 <div class="row">
                     <input id="name" name="name" placeholder="Your Name*" required/>
-                    <p class="error"></p>
-                    <input id="email" type="email" name="email" placeholder="Your Email*" required/>
-                    <p class="error"></p>
                 </div>
                 <div class="row">
-                    <input id="subject" name=subject"" placeholder="Subject*" required/>
-                    <p class="error"></p>
+                    <input id="email" name="email" placeholder="Your Email*" required/>
                 </div>
                 <div class="row">
-                    <textarea  rows="4" id="message" name="message" placeholder="Message*" required>
-                    </textarea>
-                    <p class="error"></p>
+                    <input id="subject" name ="subject" placeholder="Subject*" required/>
+                </div>
+                <div class="row">
+                    <textarea  rows="4" id="message" name="message" placeholder="Message*" required></textarea>
                 </div>
                 <div class="row right">
-                    <input value="Submit" id="" name="" type="submit" required/>
+                    <button type="submit">Submit</button>
                 </div>
             </form>
         </div>
@@ -135,26 +132,26 @@ get_header();
             </div>
             <div class="contact-option">
               <i class="fas fa-calendar-week"></i>
-              <a href="#">Schedule a meeting</a>
+              <a target="_blank" href="https://calendly.com/mintetemple/60min">Schedule a meeting</a>
             </div>
             <div class="contact-option">
               <i class="fas fa-envelope-open-text"></i>
-              <a href="#">Email me</a>
+              <a href="mailto:mintetemple@gmail.com">Email me</a>
             </div>
             <div class="contact-option">
               <i class="fas fa-phone"></i>
-              <a  href="#">Call me</a>
+              <a  href="tel://+16043534901">Call me</a>
             </div class="contact-option">
             <div class="contact-option">
               <ul class="socials">
                 <li class="icon-cont">
-                    <a href=""><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/Dwayne01"><i class="fab fa-github"></i></a>
                 </li>
                 <li class="icon-cont">
-                    <a href="" ><i class="fab fa-linkedin"></i></a>
+                    <a href="http://www.linkedin.com/in/mintetemple" ><i class="fab fa-linkedin"></i></a>
                 </li>
                 <li class="icon-cont">
-                    <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/iamkingminte_ani"><i class="fab fa-instagram"></i></a>
                 </li>
               </ul>
             </div>
@@ -162,7 +159,7 @@ get_header();
     </div>
 </section>
 
-<a class="scrollcont" href="/minte-temple-portfolio/#home"><i class="fas fa-angle-up"></i></a>
+<a class="scrollcont" href="<?php echo get_site_url() ?>/#home"><i class="fas fa-angle-up"></i></a>
 
 
 <?php
