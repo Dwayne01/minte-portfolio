@@ -17,6 +17,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }, 800)
         }
     })
+
+    const menuList = document.querySelectorAll('.menu-item')
+
+
+    for(let menu of menuList) {
+        menu.addEventListener('click', function () {
+
+          let isClose = handburgerMenu.classList.contains('open')
+
+          handburgerMenu.classList.remove('open')
+          sidebar.style.animation = 'slideout 1s';
+
+          setTimeout(() => {
+            sidebar.style.display = 'none';  
+          }, 800)
+
+        });
+    }
+
 })
 
 

@@ -1,9 +1,9 @@
 <?php
 
 // Change all instances of THEMENAME to your theme name.
-if ( ! function_exists( 'conditions_setup' ) ) :
+if ( ! function_exists( 'portfolio_setup' ) ) :
  
-   function conditions_setup() {
+   function portfolio_setup() {
      add_theme_support( 'automatic-feed-links' );
      add_theme_support( 'title-tag' );
      add_theme_support( 'post-thumbnails' );
@@ -18,7 +18,7 @@ if ( ! function_exists( 'conditions_setup' ) ) :
  
 endif;
  
-add_action('after_setup_theme', 'conditions_setup');
+add_action('after_setup_theme', 'portfolio_setup');
 
 function themename_custom_logo_setup() {
    $defaults = array(
@@ -33,12 +33,12 @@ function themename_custom_logo_setup() {
    add_theme_support( 'custom-logo', $defaults );
 }
  
-function conditions_scripts_styles(){
-   wp_enqueue_style('conditions_style', get_stylesheet_uri());
-   wp_enqueue_style('conditions_fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.0/css/all.min.css');
-   wp_enqueue_style('conditions_googlefont', 'https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@300&family=Montserrat&family=Newsreader&family=Rubik', array(), null);
-   wp_enqueue_script('conditions_script_navigation_js', get_template_directory_uri() . '/js/scripts.js', array(), null, true);
-   wp_enqueue_script('conditions_email', 'https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js');
+function portfolio_scripts_styles(){
+   wp_enqueue_style('portfolio_style', get_stylesheet_uri());
+   wp_enqueue_style('portfolio_fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.0/css/all.min.css');
+   wp_enqueue_style('portfolio_googlefont', 'https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@300&family=Montserrat&family=Newsreader&family=Rubik', array(), null);
+   wp_enqueue_script('portfolio_script_navigation_js', get_template_directory_uri() . '/js/scripts.js', array(), null, true);
+   wp_enqueue_script('portfolio_email', 'https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js');
 }
  
-add_action('wp_enqueue_scripts', 'conditions_scripts_styles');
+add_action('wp_enqueue_scripts', 'portfolio_scripts_styles');
